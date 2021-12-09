@@ -1,0 +1,27 @@
+<div class="container">
+  <mat-selection-list
+    class="container__list"
+    #list
+    *ngFor="let item of list"
+    (selectionChange)="updateStatus($event.option, item)"
+  >
+    <ng-container
+      *ngIf="item.is_completed === 0 || (visibility && item.is_completed === 1)"
+    >
+      <mat-list-option
+        checkboxPosition="before"
+        [selected]="item.is_completed === 1"
+      >
+        <p
+          [ngStyle]="{
+            'text-decoration': item.is_completed === 1 ? 'line-through' : null
+          }"
+        >
+          {{ item?.task }}
+        </p>
+      </mat-list-option>
+      <i class="edit" (click)="edit.emit(item.id)"></i>
+      <i class="delete" (click)="remove.emit(item.id)"></i>
+    </ng-container>
+  </mat-selection-list>
+</div>

@@ -1,0 +1,5 @@
+<button
+  class="custom-button"
+  [ngStyle]="{ 'background-image': 'url(' + iconUrl + ')', 'background-color': backgroundColor }"
+  (click)="clicked.emit($event)"
+></button>

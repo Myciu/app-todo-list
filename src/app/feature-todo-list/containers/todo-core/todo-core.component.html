@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="container__header">
+    <app-header (add)="createItem($event)" (changeStatus)="changeVisibility()"></app-header>
+  </div>
+
+  <app-list
+    class="container__list"
+    [list]="todoList$ | async"
+    [visibility]="doneTasksVisibility$ | async"
+    (remove)="removeItem($event)"
+    (edit)="editItem($event)"
+  ></app-list>
+</div>

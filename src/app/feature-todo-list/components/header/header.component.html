@@ -1,0 +1,8 @@
+<mat-toolbar class="container" color="primary">
+  <ui-button
+    [iconUrl]="'/assets/custom-icons/add.png'"
+    (clicked)="openAddDialog()"
+  ></ui-button>
+    <p> To-Do List </p>
+  <ui-button [iconUrl]="'/assets/custom-icons/gear.png'" (click)="changeStatus.emit()"></ui-button>
+</mat-toolbar>

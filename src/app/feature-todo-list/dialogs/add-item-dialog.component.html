@@ -1,0 +1,15 @@
+<h2>Add note:</h2>
+<mat-form-field appearance="fill">
+  <textarea
+    [(ngModel)]="text"
+    matInput
+    cdkTextareaAutosize
+    cdkAutosizeMinRows="2"
+    cdkAutosizeMaxRows="10"
+  ></textarea>
+</mat-form-field>
+
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="add()">Add</button>
+  <button mat-button color="primary" (click)="closeDialog()">Close</button>
+</div>
