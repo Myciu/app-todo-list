@@ -22,3 +22,11 @@ Z powodu braku czasu nie udało się, a było w planie:
 - deserializacja danych przychodzących z serwera -> np. została flaga `is_completed`, lepiej zamienić to na camelCase i sprowadzić do typu `boolean`
 - użycie entityAdaptera w storze
 - uporządkowanie niektórych plików, czasami da się coś wyseparować do oddzielnej metody itp. - sprawy kosmetyczne
+
+//powinno też zastosować się lazy loading dla modułów
+```
+{
+    path: '',
+    loadChildren: () => import('./feature-todo-list/feature-todo-list.module').then(m => m.FeatureTodoListModule)
+}
+```
