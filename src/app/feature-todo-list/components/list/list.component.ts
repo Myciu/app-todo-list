@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatListOption, MatSelectionList } from '@angular/material/list';
 import { TodoListFacade } from '../../+store/todo-list.facade';
 import { ITodoList } from '../../interfaces/todo-list.interface';
+import { TodoListModel } from '../models/todo-list.model';
 
 @Component({
   selector: 'app-list',
@@ -10,7 +11,7 @@ import { ITodoList } from '../../interfaces/todo-list.interface';
 })
 export class ListComponent implements OnInit {
   @Input()
-  list: ITodoList[];
+  list: TodoListModel[];
 
   @Input()
   visibility: boolean;

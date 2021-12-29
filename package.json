@@ -22,9 +22,11 @@
     "@angular/platform-browser-dynamic": "~10.2.4",
     "@angular/router": "~10.2.4",
     "@ngrx/effects": "^10.0.0",
+    "@ngrx/entity": "^10.1.2",
     "@ngrx/store": "^10.1.2",
     "ramda": "^0.27.1",
     "rxjs": "~6.6.0",
+    "serializr": "^2.0.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

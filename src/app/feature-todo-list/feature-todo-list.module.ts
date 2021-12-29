@@ -55,6 +55,6 @@ const materials = [
     materials,
   ],
   exports: [TodoCoreComponent],
-  providers: [TodoListFacade, TodoListEffects],
+  providers: [TodoListFacade, TodoListEffects, AddItemDialogComponent],
 })
 export class FeatureTodoListModule {}

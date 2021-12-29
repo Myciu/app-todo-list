@@ -54,7 +54,7 @@ export class TodoCoreComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((task: string) => {
       if (task) {
-        const isCompleted = headItem.is_completed == 1 ? true : false;
+        const isCompleted = headItem.isCompleted == 1 ? true : false;
         this._todoListFacade.editItem(task, headItem.id, isCompleted);
         this._todoListFacade.getTasks();
       }

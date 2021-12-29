@@ -11,7 +11,8 @@ export class TodoListFacade {
   todoList$ = this._store.select(fromTodoListSelectors.selecTodoList);
   doneTasksVisibility$ = this._store.select(fromTodoListSelectors.selecTasksVisibilityStatus);
 
-  constructor(private _store: Store<ITodoListState>) {}
+  constructor(private _store: Store<ITodoListState>) {
+  }
 
   getTasks(): void {
     this._store.dispatch(todoListActions.getTasks());

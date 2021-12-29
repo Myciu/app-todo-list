@@ -5,15 +5,28 @@ import { Observable } from 'rxjs';
 
 import { environment } from './../../../environments/environment.prod';
 import { ITodoList } from '../interfaces/todo-list.interface';
+import { TodoListModel } from '../components/models/todo-list.model';
+import { Clazz, deserialize } from 'serializr';
+import { ApiModel } from '../components/models/Items.model';
+import { map } from 'rxjs/operators';
 
 const url = environment.apiUrl;
+
+function deserializePage<T>(model: Clazz<T>, item: ApiModel): ApiModel<T> {
+  return deserialize<ApiModel<T>>(ApiModel, {
+    ...item,
+    data: deserialize(model, item.data)
+  })
+}
 
 @Injectable({ providedIn: 'root' })
 export class TodoListApiService {
   constructor(private _http: HttpClient) {}
 
-  getTodoList(): Observable<ITodoList[]> {
-    return this._http.get<ITodoList[]>(url);
+  getTodoList(): Observable<ApiModel<TodoListModel>> {
+    return this._http.get(url).pipe(
+      map((obj: ApiModel<TodoListModel>) => deserializePage(TodoListModel, obj))
+    );
   }
 
   deleteTask(id: string): Observable<any> {
