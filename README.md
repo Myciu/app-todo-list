@@ -17,10 +17,10 @@ Całość około 9h
 
 ## Sprawy do dokończenia
 Z powodu braku czasu nie udało się, a było w planie:
-- podstawowe unit testy
+- podstawowe unit testy //gotowe
 - UI ze screena
-- deserializacja danych przychodzących z serwera -> np. została flaga `is_completed`, lepiej zamienić to na camelCase i sprowadzić do typu `boolean`
-- użycie entityAdaptera w storze
+- deserializacja danych przychodzących z serwera -> np. została flaga `is_completed`, lepiej zamienić to na camelCase i sprowadzić do typu `boolean` //gotowe
+- użycie entityAdaptera w storze //gotowe
 - uporządkowanie niektórych plików, czasami da się coś wyseparować do oddzielnej metody itp. - sprawy kosmetyczne
 
 //powinno też zastosować się lazy loading dla modułów
